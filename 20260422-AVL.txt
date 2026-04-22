@@ -1,0 +1,176 @@
+		
+1-------------------------        
+Imagine you are building an AVL tree from scratch. Here is your sequence to insert, in this exact order: 30, 10, 20.
+
+Grab a piece of scratch paper if it helps, and walk through the insertions step-by-step. Once you have added all three numbers to the tree, tell me:
+
+Which node breaks the AVL rules and becomes unbalanced after the final insertion?
+
+What is the exact balance factor of that specific node?
+
+Which of the four rotations (LL, RR, LR, or RL) will you need to perform to fix this tree?
+
+Take your time drawing it out, and let me know what you come up with!
+
+
+		30
+	10
+		20
+
+
+1) 20, cause the Factor balance becomes 2 
+
+2 - 0 = 2
+
+2) LR
+
+	20
+10		30
+
+2--------------------------------------
+Here is your new sequence to insert, in this exact order: 50, 70, 60.
+
+Draw out the tree as you insert each number. Once you have all three nodes placed, answer the same three questions:
+
+Which node breaks the AVL rules and becomes unbalanced after the final insertion?
+
+What is the exact balance factor of that specific node? (Remember the formula: Left Subtree Height - Right Subtree Height)
+
+Which of the four rotations (LL, RR, LR, or RL) will you need to perform to fix this tree?
+
+
+
+	50
+		70
+	60
+
+
+At 50
+
+node 50: 0 - 2 = -2
+node 70: 0 - 1 = 1
+Node 60: 0 - 0 = 0
+
+LR rotation
+
+	60
+50		70
+
+
+
+
+
+3----------------------
+Fantastic. Deletions follow the exact same rules for balance factors and rotations, but instead of tracking back from a newly added leaf, you track back up the tree starting from the parent of the node you just removed.
+
+Let's use an example directly from your lecture slides .
+
+Here is your starting, perfectly balanced AVL tree:
+
+Plaintext
+         40
+       /    \
+     10      60
+    /  \    /  \
+   8   25  55  70
+         \
+         30
+Your Task:
+Remove node 8 from this tree.
+
+Once you delete it, calculate the new balance factors working your way up from where 8 used to be, and tell me:
+
+Which node becomes the first to break the AVL balance rules?
+
+What is the exact balance factor of that specific node?
+
+Which of the four rotations (LL, RR, LR, or RL) will you need to perform to fix this tree?
+
+Draw it out and let me know your final diagnosis!
+
+
+         40
+       /    \
+     10      60
+    /  \    /  \
+       25  55  70   BF = 
+         \
+         30         
+
+         40
+       /    \
+     25      60
+    /  \    /  \
+   10   30  55  70
+
+
+
+4--------------------------------
+I love the ambition! You chose the AVL Boss Level.
+
+We talked earlier about how deletions can sometimes cause a "chain reaction" of imbalances all the way up to the root. To truly master AVL trees, you need to be able to spot and fix a cascading imbalance.
+
+Here is your starting tree. It is currently perfectly balanced (go ahead and verify the heights if you want to be sure!).
+
+Plaintext
+            50
+         /      \
+       25        75
+      /  \      /  \
+    10    40  60    80
+   /  \   /   /
+  5   15 30  55
+ /
+1
+The Boss Level Mission:
+Your task is to delete node 80.
+
+Grab a large piece of scratch paper, remove that node, and recalculate your balance factors working your way up the right side.
+
+Once you have worked through it, answer these three questions:
+
+The First Break: Which node is the first one to break the AVL balance rules after deleting 80, and what is its balance factor?
+
+The First Fix: What rotation do you use to fix that first node? (Tell me what the right subtree looks like after the fix).
+
+The Chain Reaction: After you fix that first node, you must keep checking ancestors. What is the new balance factor of the root node (50)? Does it trigger a second rotation? If so, what kind?
+
+Take your time drawing this one out. It requires tracking your heights very carefully. Let me know when you have your diagnosis!
+
+
+
+Confirming BFs
+
+
+            50 (1)
+         /          \
+       25(1)        75 (1)
+      /      \      /    \  
+    10(1)   40(1) 60(1)  80(0)   
+   /    \    /      /
+5(1) 15(0) 30(0) 55(0)
+ /
+1 (0)
+
+
+After deleting:
+            50 (1)
+         /          \
+       25(1)        75 (2) unbalanced, we need a LL rotation
+      /      \      /     
+    10(1)   40(1) 60(1)     
+   /    \    /      /
+5(1) 15(0) 30(0) 55(0)
+ /
+1(0)
+
+After LL roration on 75:
+            50 (2) unbalanced, 
+         /          \
+       25(1)        60(0) 
+      /      \      /   \  
+    10(1)   40(1) 55(0)  75 (0)    
+   /    \    /      
+5(1) 15(0) 30(0) 
+ /
+1(0)
