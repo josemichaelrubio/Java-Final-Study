@@ -137,25 +137,21 @@ The Chain Reaction: After you fix that first node, you must keep checking ancest
 
 Take your time drawing this one out. It requires tracking your heights very carefully. Let me know when you have your diagnosis!
 
-
-
 Confirming BFs
 
-
             50 (1)
-         /          \
+         /         \
        25(1)        75 (1)
       /      \      /    \  
     10(1)   40(1) 60(1)  80(0)   
    /    \    /      /
-5(1) 15(0) 30(0) 55(0)
+ 5(1) 15(0) 30(0) 55(0)
  /
 1 (0)
 
-
 After deleting:
             50 (1)
-         /          \
+         /         \
        25(1)        75 (2) unbalanced, we need a LL rotation
       /      \      /     
     10(1)   40(1) 60(1)     
@@ -171,6 +167,6 @@ After LL roration on 75:
       /      \      /   \  
     10(1)   40(1) 55(0)  75 (0)    
    /    \    /      
-5(1) 15(0) 30(0) 
+ 5(1) 15(0) 30(0) 
  /
 1(0)

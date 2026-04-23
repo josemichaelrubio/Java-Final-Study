@@ -1,0 +1,39 @@
+Insert into Max Heap
+Given a max heap represented by the array [10, 5, 3, 2, 4], insert the element 15 and show the resulting heap.
+-------------- 
+
+OG
+    [10, 5, 3, 2, 4]
+
+Insert 15 at the end
+    [10, 5, 3, 2, 4, 15]
+
+Compare with Parent (Heapify Up): The Parent is at index (i - 1)/2
+    MaxHeap[5] = 15
+    (5-1)/2 = 2 
+    Parent is at MaxHeap[2] = 3
+
+15 > 3 ? Yes, then swap 
+        (Note: In a Max Heap, the only rule is that every parent must be greater than or equal to its children. 
+        If you insert a value and find it is already smaller than its parent, the "heap property" is already satisfied)
+    [10, 5, 15, 2, 4, 3]
+
+Compare with New Parent of 
+    MaxHeap [2] = 15
+    (2-1)/2 = 0
+    Parent is at MaxHeap[0] = 10
+
+15 > 10 ? Yes, Then swap
+    [15, 5, 10, 2, 4, 3]
+
+Since inserted element (15) has reached MaxHeap[0], we stop. 
+
+-------------------------------
+Final Array:
+    [15, 5, 10, 2, 4, 3]
+
+Drawn out:
+            15
+    5               10
+2       4       3
+----------------
