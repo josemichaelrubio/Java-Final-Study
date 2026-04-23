@@ -1,0 +1,35 @@
+Extract Max Element:
+
+Given a max heap [20, 15, 18, 8, 10, 5], perform an extract max operation and show the resulting heap.
+--------------------------
+    NOTE: In Max Element the maximum element is always at the root (the first element in the array)
+
+Original Array:
+    [20, 15, 18, 8, 10, 5]
+
+Extract Max Element: MaxHeap[0] = 20
+    [x, 15, 18, 8, 10, 5]
+
+Move the last Element to the Root 
+        NOTE: Shape Rule - The last element in the array (the right-most leaf on the bottom level of the tree) is the only node in the entire structure that can be cleanly removed without leaving a gap in the array or breaking the tree's shape.
+    [5, 15, 18, 8, 10]
+
+Heapify Down
+    NOTE: the new root (5) might be smaller than its children, violating the max-heap property. We need to swap it down the tree until it is larger than both its children.
+
+Compare 5 with it's children MaxHeap[1] = 15 and MaxHeap[2] = 18 then Swap the Largest
+    [18, 15, 5 , 8, 10]
+
+Compare MaxHeap[2] = 5 with it's children
+    Since MaxHeap[2] = 5's children does not exist, MaxHeap[5] and MaxHeap[6], The heap is property restorred 
+
+===============
+
+Final Heap
+[18, 15, 5, 8, 10]
+
+
+            18
+    15              5
+8       10
+====================
