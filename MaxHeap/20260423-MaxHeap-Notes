@@ -1,0 +1,14 @@
+max heap:
+    A complete binary tree where the value of each node is greater than or equal to the values of its children
+Array is commonly used to represent a max heap
+Inserting:
+    Bubble up the new element until the heap property is restored
+    The only rule is that every parent must be greater than or equal to its children. 
+    If you insert a value and find it is already smaller than its parent, the "heap property" is already satisfied
+The Parent is at index (i - 1)/2
+time complexity = O(log n)
+Removing:
+    Replace the root with the last leaf and bubble down
+    : Shape Rule - The last element in the array (the right-most leaf on the bottom level of the tree) is the only node in the entire structure that can be cleanly removed without leaving a gap in the array or breaking the tree's shape.
+    We need to swap it down the tree until it is larger than both its children
+In Max Element the maximum element is always at the root (the first element in the array)
