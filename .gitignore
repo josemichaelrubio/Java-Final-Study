@@ -1,0 +1,9 @@
+# Python virtual environment
+.venv/
+
+# IJava installer files
+ijava/
+ijava-1.3.0.zip
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
