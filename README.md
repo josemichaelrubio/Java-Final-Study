@@ -42,6 +42,30 @@ python3 install.py --sys-prefix
 
 4. Select the **Java** kernel and start coding.
 
+## IJava Notebook Pattern
+
+IJava does not auto-run `main()`. Use this two-cell pattern:
+
+**Cell 1 - Define the class:**
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello!");
+    }
+}
+```
+
+**Cell 2 or below the class - Explicitly Execute it:**
+```java
+MyClass.main(null);
+```
+
+Alternatively, skip the class wrapper entirely and write logic directly in a cell:
+```java
+// No class needed - just run code directly
+System.out.println("Hello!");
+```
+
 ## Contents
 
 | File / Folder | Description |
