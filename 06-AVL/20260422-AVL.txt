@@ -51,7 +51,7 @@ node 50: 0 - 2 = -2
 node 70: 0 - 1 = 1
 Node 60: 0 - 0 = 0
 
-LR rotation
+RL rotation
 
 	60
 50		70
@@ -96,6 +96,8 @@ Draw it out and let me know your final diagnosis!
        25  55  70   BF = 
          \
          30         
+
+It requires RR
 
          40
        /    \
@@ -170,3 +172,17 @@ After LL roration on 75:
  5(1) 15(0) 30(0) 
  /
 1(0)
+
+!!!! Since both are positive (meaning the tree is "Left-heavy" and then "Left-heavy" again down the chain), this is another LL Imbalance.
+
+Since both are positive (meaning the tree is "Left-heavy" and then "Left-heavy" again down the chain), this is another LL Imbalance.
+
+              25(0)
+             /       \
+           /           \
+        10(1)          50(0)
+       /    \         /     \
+     5(1)  15(0)   40(1)    60(0)
+    /             /        /    \
+  1(0)          30(0)   55(0)   75(0)
+
