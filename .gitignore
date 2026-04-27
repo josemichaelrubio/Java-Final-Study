@@ -7,3 +7,6 @@ ijava-1.3.0.zip
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+# Mac
+.DS_Store

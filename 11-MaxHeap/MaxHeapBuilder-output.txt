@@ -1,0 +1,2 @@
+Original Array: [__, 3, 9, 8, 4, 5, 6, 7]
+Updated Max Heap: [__, 9, 5, 8, 4, 3, 6, 7]
