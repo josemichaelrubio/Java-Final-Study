@@ -20,7 +20,7 @@ pip install -r requirements.txt
 **Install the Java kernel**
 
 ```bash
-wget https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
+curl -L -o ijava-1.3.0.zip https://github.com/SpencerPark/IJava/releases/download/v1.3.0/ijava-1.3.0.zip
 unzip ijava-1.3.0.zip -d ijava
 cd ijava
 python3 install.py --sys-prefix
@@ -33,20 +33,17 @@ python3 install.py --sys-prefix
    source .venv/bin/activate
    ```
 
-2. Start the Jupyter server:
-   ```bash
-   jupyter notebook --no-browser
-   ```
+2. Open any `.ipynb` file in VS Code and select the **Java** kernel from the kernel picker (top right).
 
-3. In VS Code, open any `.ipynb` file, click the kernel picker (top right), select **Existing Jupyter Server**, and paste the `http://127.0.0.1:8888/?token=...` URL from the terminal.
+   > **If the Java kernel doesn't appear automatically: ** run `jupyter notebook --no-browser` in the terminal, then in VS Code select **Existing Jupyter Server** and paste the `http://127.0.0.1:8888/?token=...` URL.
 
-4. Select the **Java** kernel and start coding.
+3. Select the **Java** kernel and start coding.
 
 ## IJava Notebook Pattern
 
 IJava does not auto-run `main()`. Use this two-cell pattern:
 
-**Cell 1 - Define the class:**
+**Cell 1 — Define the class:**
 ```java
 public class MyClass {
     public static void main(String[] args) {
@@ -62,7 +59,7 @@ MyClass.main(null);
 
 Alternatively, skip the class wrapper entirely and write logic directly in a cell:
 ```java
-// No class needed - just run code directly
+// No class needed — just run code directly
 System.out.println("Hello!");
 ```
 
